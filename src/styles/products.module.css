@@ -1,0 +1,123 @@
+/* Page Products*/
+.products {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.filters {
+    border: 1px solid;
+    margin-top: 30px;
+    width: clamp(150px, 200px, 350px);
+    height: min-content;
+    
+}
+.container__filters{
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+    padding: 5px;
+}
+.container__filters p{
+    font-weight: 800;
+    margin-left: 10px;
+}
+.container__filters label {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.container__filters label p{
+    font-weight: 200;
+}
+.product {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    width: clamp(250px, 60vw, 850px);
+    height: min-content;
+    margin-top: 30px;
+}
+
+/*Componentes product*/
+.card__product {
+    display: flex;
+    padding: 10px;
+    flex-flow: row nowrap;
+    border: 1px solid;
+}
+
+.product__img {
+    width: 250px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.product__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.product__info {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+}
+
+/*Card styles*/
+.title {
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 1.9rem;
+}
+
+.category {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    color: #c4c1c1;
+}
+
+.rate {
+    font-size: 1rem;
+    margin-top: 10px;
+    
+}
+
+.count {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.button {
+    width: fit-content;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: yellow;
+    color: var(--background-color);
+}
+.inputRange{
+    display: flex;
+    flex-flow: column nowrap;
+}
+/*Responsive*/
+@media screen and (max-width: 800px) {
+    .card__product {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+        border: 1px solid;
+    }
+
+    .product {
+        width: clamp(250px, 60vw, 850px);
+    }
+}
