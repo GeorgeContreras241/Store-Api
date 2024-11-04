@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 import { ContextGlobal } from "@/components/ContextGlobal";
 import { fetchProducts } from "@/data/FetchProducts";
+import { Cart } from "@/components/Cart"
 
 export const metadata = {
   title: "Create Next App",
@@ -14,8 +15,9 @@ export default async function RootLayout({ children }) {
     <html lang="es">
       <body>
         <ContextGlobal initialData={data}>
-        <Navbar></Navbar>
-        {children}
+          <Navbar></Navbar>
+          {children}
+          <Cart></Cart>
         </ContextGlobal>
       </body>
     </html>

@@ -1,7 +1,8 @@
 "use client"
 import { Product } from "@/components/Product"
 import styles from "@/styles/products.module.css"
-import { Filter } from "@/components/filter"
+import { Filter } from "@/components/Filters"
+import { Cart } from "@/components/Cart"
 
 export default function Products() {
     
@@ -13,6 +14,7 @@ export default function Products() {
             <section className={styles.product}>
                 <Product></Product>
             </section>
+            <Cart></Cart>
         </main>
 
 

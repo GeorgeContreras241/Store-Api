@@ -1,11 +1,12 @@
 /*Modo claro*/
 :root {
-  --background-color: #c7c3c3;
-  --background-one: #fff;
+  --background-color: #ffffff;
+  --background-one: #5d5d5d;
   --color: #000000;
+  --color-one: rgb(255, 255, 255);
 }
 
-/*Modo oscuro*/
+/*Modo oscuro
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #000000;
@@ -13,7 +14,7 @@
     --color: #ffffff;
   }
   html{
-    color-scheme: dark;
+    color-scheme: ligth;
   }
 }
 /**/
@@ -31,4 +32,11 @@ a{
 }
 li{
   list-style: none;
+}
+
+.comenzar{
+  position: relative;
+  top: 300px;
+  
+  font-size: 5rem;
 }
