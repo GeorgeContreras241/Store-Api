@@ -44,7 +44,7 @@ export const Filter = () => {
                     checked={check.option3}
                     onChange={handleCheckBox}
                 />
-                <p>Men's clothing</p>
+                <p>Men is clothing</p>
             </label>
             <label>
                 <input
@@ -53,7 +53,7 @@ export const Filter = () => {
                     checked={check.option4}
                     onChange={handleCheckBox}
                 />
-                <p>Women's clothing</p>
+                <p>Women is clothing</p>
             </label>
             <label>
                 <div className={styles.inputRange}>
