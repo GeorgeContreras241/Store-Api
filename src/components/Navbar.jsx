@@ -10,20 +10,21 @@ export const Navbar = () => {
     handleInput, setSearchValue,
     cart, setMenu, menu } = useContext(ContextTienda)
 
-    console.log(menu)
+  console.log(menu)
 
   return (
     <>
       <nav className={styles.header}>
-        <ul>
+        <ul className={styles.header__title}>
           <li>Tienda Api Real Fake</li>
         </ul>
         <div className={styles.header__search}>
           <div className={styles.header__div}>
-            <input type="text" placeholder='buscar'
+            <input type="text" placeholder='Buscar Producto'
               value={searchValue}
               onChange={handleInput}
-            /></div>
+            />
+          </div>
           <section className={styles.searchFilter}>
             <ul>
               {
@@ -35,7 +36,7 @@ export const Navbar = () => {
           </section>
         </div>
 
-        <button onClick={() => setMenu(!menu)}><FaShoppingCart />{cart.length}</button>
+        <button className={styles.button__Cart} onClick={() => setMenu(!menu)}><FaShoppingCart /> <span className={styles.button__span}>{cart.length}</span></button>
       </nav>
 
     </>

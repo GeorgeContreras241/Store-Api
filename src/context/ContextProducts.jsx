@@ -16,7 +16,7 @@ export const ContextProducts = ({ children, initialData }) => {
   })
   const [product, setProduct] = useState(null)
   const [searchValue, setSearchValue] = useState("")
-  const [menu, setMenu] = useState(true)
+  const [menu, setMenu] = useState(false)
   const handleInput = (event) => {
     setSearchValue(event.target.value)
 

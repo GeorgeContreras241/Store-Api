@@ -1,36 +1,71 @@
-.cart{
+/*Carrito de compras*/
+.cart {
     margin-top: 70px;
+    padding-bottom: 60px;
     height: 100%;
     max-width: 0;
     position: fixed;
-    background-color: rgb(139, 139, 139);
+    background-color: var(--background-color);
     right: 0;
     top: 0;
     overflow-y: auto;
     transition: max-width .5s ease;
+    border-left: 1px solid gray;
 }
-.cart.active{
+
+.cart.active {
     max-width: 300px;
 }
-.card__cart{
+
+/*Boton Completar Compra*/
+.priceTotal {
+    width: 300px;
+    height: 80px;
+    border: none;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.priceTotal button {
+    width: fit-content;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(99, 245, 15);
+    color: black;
+    cursor: pointer;
+}
+
+/*Card carrito de compras*/
+.card__cart {
     display: flex;
     flex-flow: column;
     align-items: center;
-    border: 1px solid #000000;
+    border: var(--background-border) 1px solid;
     margin: 10px;
+    padding: 15px 20px;
 }
 
-.cart__img{
+.card__cart:hover {
+    border: var(--background-border-hover) 1px solid;
+}
+
+.cart__img {
     width: 200px;
     height: 150px;
     aspect-ratio: 1/1;
 }
-.cart__img img{
+
+.cart__img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-.card__cart p{
+
+.card__cart p {
     width: 100%;
     font-size: 1.2rem;
     font-weight: 800;
@@ -38,10 +73,57 @@
     overflow: hidden;
     white-space: nowrap;
 }
-.card__cart span{
-    
-}
-.cart__cant{
+
+.card__cart span {}
+
+.cart__cant {
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-evenly;
 }
+
+.botton__delate{
+    width: fit-content;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(155, 66, 66);
+    color: var(--color-one);
+    cursor: pointer;
+}
+.botton__delate:hover{
+    background-color: rgb(212, 66, 66);
+}
+.cart__buttons{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    height: fit-content;
+    outline: var(--baclground-border);
+    width: 80px;
+    border: 1px solid var(--background-border);
+}
+.cart__buttons p{
+    text-align: center;
+}
+.botton__add{
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--color);
+}
+.botton__dis{
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+

@@ -4,9 +4,9 @@ import { useContext } from "react"
 import styles from "@/styles/products.module.css"
 import Link from "next/link"
 export const Product = () => {
-    const { filtered, handleCart,handleDelate} = useContext(ContextTienda)
-    
-    
+    const { filtered, handleCart, handleDelate } = useContext(ContextTienda)
+
+
     return (
         <>
             {
@@ -23,8 +23,10 @@ export const Product = () => {
                             <p className={styles.categoty}>{item.category}</p>
                             <p className={styles.rate}>Calificaciones Globales: {item.rating.rate}</p>
                             <p className={styles.count}>Vistas: {item.rating.count}</p>
-                            <button onClick={() => handleCart(item.id, item.title, item.price,item.image)} className={styles.button}>Agregar al carrito</button>
-                            <button onClick={()=> handleDelate(item.id)}>Eliminar</button>
+                            <div className={styles.container__button}>
+                                <button onClick={() => handleCart(item.id, item.title, item.price, item.image)} className={styles.button}>Agregar al carrito</button>
+                                <button onClick={() => handleDelate(item.id)} className={styles.button__delate}>Eliminar</button>
+                            </div>
                         </div>
                     </div>
                 )

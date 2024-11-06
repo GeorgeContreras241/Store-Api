@@ -1,23 +1,22 @@
 /*Modo claro*/
 :root {
   --background-color: #ffffff;
-  --background-one: #5d5d5d;
+  --background-border: rgb(211, 211, 211);
+  --background-border-hover: #bebebeda;
   --color: #000000;
+  --color-basic: black;
   --color-one: rgb(255, 255, 255);
+  --input:#fff;
 }
 
-/*Modo oscuro
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #000000;
-    --background-one: #3d3d3d;
-    --color: #ffffff;
-  }
-  html{
-    color-scheme: ligth;
-  }
+.darkMode{
+  --background-color: #000000;
+  --background-border: rgb(70, 69, 69);
+  --background-border-hover: #6d6d6dda;
+  --color: #f3f3f3;
+  --input:#2b2929;
 }
-/**/
+
 *{
   margin: 0;
   padding: 0;
@@ -37,6 +36,6 @@ li{
 .comenzar{
   position: relative;
   top: 300px;
-  
+
   font-size: 5rem;
 }
