@@ -5,8 +5,10 @@ import Loading from "./products/loading";
 export default function Home() {
   return (
     <Suspense fallback={<Loading></Loading>}>
-      <Link className="comenzar" href='/products' style={{"margin-top": "200px"}}>Comenzar</Link>
-      
+      <div className="container__button">
+        <Link className="button" href='/products'>Comenzar
+        </Link>
+      </div>
     </Suspense>
 
   )

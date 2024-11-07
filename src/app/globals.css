@@ -6,36 +6,82 @@
   --color: #000000;
   --color-basic: black;
   --color-one: rgb(255, 255, 255);
-  --input:#fff;
+  --input: #fff;
 }
 
-.darkMode{
+.darkMode {
   --background-color: #000000;
   --background-border: rgb(70, 69, 69);
   --background-border-hover: #6d6d6dda;
   --color: #f3f3f3;
-  --input:#2b2929;
+  --input: #2b2929;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   background-color: var(--background-color);
-  color: var(--color); 
+  color: var(--color);
 }
-a{
+
+a {
   text-decoration: none;
 }
-li{
+
+li {
   list-style: none;
 }
 
-.comenzar{
-  position: relative;
-  top: 300px;
+/*presentacion*/
+.container__button{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  font-size: 5rem;
+.button {
+  background: var(--color);
+  color: var(--input);
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 1rem 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  
+}
+
+.button:hover {
+  background: var(--background-color);
+  color: var(--color);
+}
+
+.button:before,
+.button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: var(--color);
+  transition: 400ms ease all;
+}
+.button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.button:hover:before,.button:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
