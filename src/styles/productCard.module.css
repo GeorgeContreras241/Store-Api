@@ -4,7 +4,8 @@
     margin: auto;
     margin-top: 20px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row ;
+    align-items: center;
     border: 1px solid var(--background-border);
     padding: 10px;
 }
@@ -90,6 +91,15 @@
     margin-top: 10px;
     border: none;
     background-color: yellow;
-    color: var(--background-color);
+    color: var(--color-basic);
     cursor: pointer;
+}
+@media screen and (max-width: 850px){
+    .cart{
+        width: 90%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        
+    }
 }

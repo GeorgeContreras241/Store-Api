@@ -1,13 +1,12 @@
 /* Page Products*/
 .products {
-    width: 100vw;
     height: 100vh;
     margin-top: 60px;
     display: flex;
     flex-flow: row;
     justify-content: center;
-
     gap: 20px;
+    content-visibility: visible;
 }
 
 .filters {
@@ -75,7 +74,7 @@
 /*Card styles*/
 .title {
     font-size: 1.2rem;
-    width: 300px;
+    min-width: 300px;
 }
 .title a{
     color: var(--color);
