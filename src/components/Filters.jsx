@@ -1,22 +1,31 @@
 "use client"
-import { ContextTienda } from '@/context/ContextProducts'
-import React, { useContext, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from "@/styles/products.module.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { addRange, filterCategory } from '@/redux/userSlice'
 
 export const Filter = () => {
-    const { check, setCheck,value, setValue} = useContext(ContextTienda)
+    const dispatch = useDispatch()
+    const [check, setCheck] = useState({
+        option1: false,
+        option2: false,
+        option3: false,
+        option4: false
+    });
 
     const handleCheckBox = (event) => {
-        setCheck((prevCheck) => ({
-            ...prevCheck,
-            [event.target.name]: event.target.checked
-        }))
-    }
-
-    const handleChange = (e) => {
-        setValue(e.target.value)
-    }
-    return (
+        const { name, checked } = event.target;
+        const updatedCheck = {
+            ...check,
+            [name]: checked,
+        };
+        setCheck(updatedCheck);
+        dispatch(filterCategory(updatedCheck));
+  
+    };
+    
+    
+   return (
         <div className={styles.container__filters}>
             <p>Category</p>
             <label>
@@ -54,18 +63,6 @@ export const Filter = () => {
                     onChange={handleCheckBox}
                 />
                 <p>Women is clothing</p>
-            </label>
-            <label>
-                <div className={styles.inputRange}>
-                    <span className={styles.precio}>Precio</span>
-                    <span className={styles.precio_des}>Buscar productos menores de $ {value}</span>
-                    <input type="range"
-                        id="rangeInput"
-                        min="0"
-                        max="1000"
-                        value={value}
-                        onChange={handleChange} />
-                </div>
             </label>
         </div>
     )

@@ -1,16 +1,28 @@
 "use client"
-import { ContextTienda } from "@/context/ContextProducts";
+import { handleMenu } from "@/redux/menuSlice";
+import { filterUser } from "@/redux/userSlice";
 import styles from "@/styles/navbar.module.css"
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Navbar = () => {
-  const { searchValue, filteredSearch,
-    handleInput, setSearchValue,
-    cart, setMenu, menu } = useContext(ContextTienda)
+  const dispatch = useDispatch()
+  const [menu, setMenu] = useState(false)
+  const {filterSearch, cart} = useSelector((state)=> state.user)
+  
+  const [searchValue, setSearchValue] = useState("")
+  const handleInput = (event) => {
+    setSearchValue(event.target.value)
+    dispatch(filterUser(searchValue))
+  }
+  const handleMen = () => {
+    const updateMenu = !menu;
+    setMenu(updateMenu)
+    dispatch(handleMenu(updateMenu))
 
-  console.log(menu)
+  }
 
   return (
     <>
@@ -28,15 +40,18 @@ export const Navbar = () => {
           <section className={styles.searchFilter}>
             <ul>
               {
-                filteredSearch.map(item => (
-                  <li key={item.id}><Link className={styles.a} href={"/products/[productId]"} as={`/products/${item.id}`} onClick={() => setSearchValue("")}>{item.title}</Link></li>
-                ))
+                searchValue !== ""?filterSearch.map(item => (
+                  <li key={item.id}><Link className={styles.a} href={"/products/[productId]"} 
+                  as={`/products/${item.id}`} 
+                  onClick={() => setSearchValue("")}>{item.title}</Link></li>
+                )): ""
               }
             </ul>
           </section>
         </div>
 
-        <button className={styles.button__Cart} onClick={() => setMenu(!menu)}><FaShoppingCart /> <span className={styles.button__span}>{cart.length}</span></button>
+        <button className={styles.button__Cart} onClick={handleMen}><FaShoppingCart /> <span className={styles.button__span}>{cart.length}
+          </span></button>
       </nav>
 
     </>

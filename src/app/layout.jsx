@@ -1,28 +1,30 @@
-import { Navbar } from "@/components/Navbar";
+"use client"
+import { Provider, useDispatch } from "react-redux";
+import store from "@/redux/store"
 import "./globals.css";
-import { ContextGlobal } from "@/components/ContextGlobal";
-import { fetchProducts } from "@/data/FetchProducts";
-import { Cart } from "@/components/Cart"
-
-
-export const metadata = {
+import { useEffect } from "react";
+import { Navbar } from "@/components/Navbar";
+import { Cart } from "@/components/Cart";
+/*
+export const metadata = { 
   title: "Store Api",
   description: "Application generated from the Fake Store Api.",
 };
+*/
 
-export default async function RootLayout({ children }) {
-  const data = await fetchProducts()
+
+export default function RootLayout({ children }) { 
   return (
     <html lang="es">
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
       <body>
-        <ContextGlobal initialData={data}>
+        <Provider store={store}>
           <Navbar></Navbar>
           {children}
           <Cart></Cart>
-        </ContextGlobal>
+        </Provider>
       </body>
     </html>
   );
